@@ -34,9 +34,8 @@ Parameters of this policy:
 
 1. Update the following lines in openshift.yml with your own envrironment.
 	
-    - GIT_REPO [openshift.yml:L113](https://github.com/scrith/3scale-custom-policy/blob/9f7172ffe5202278d7c4cbaaf597d8b5bb5534df/openshift.yml#L113)
-    
-    - APICAST_CUSTOM_NAMESPACE [openshift.yml:L117](https://github.com/scrith/3scale-custom-policy/blob/9f7172ffe5202278d7c4cbaaf597d8b5bb5534df/openshift.yml#L113)
+    - GIT_REPO openshift.yml:L113
+    - APICAST_CUSTOM_NAMESPACE openshift.yml:L117
 
 2. Access the current 3scale namespace for your API casts.
 
@@ -61,7 +60,7 @@ Parameters of this policy:
 1. To start the first build run the following command:
 
    ```shell
-   oc -n <<3SCALE_NAMESPACE>> start-build apicast-guid-policy --wait --follow
+   oc -n <<3SCALE_NAMESPACE>> start-build apicast-new-policy --wait --follow
    ```
 
 2. To start the second build run the following command:
@@ -80,13 +79,8 @@ Once the redeploys finish the new policy appearing in the list of policies to ad
 2. From the dropdown menu on the top Access your API or Service and click on `Integration` > `Policies`;
 3. Then click on the link `Add policy`;
 4. Then click on the `GUID Policy`:
-   
-   ![](docs/guid-policy.png)
 5. Move the new policy to before the default **API Cast** policy;
 6. Click on the **GUID Policy** again and you should see its properties;
-
-   ![](docs/guid-policy-settings.png)
-
 7. There you can change the header name to be used to add the **UUID** value;
 8. Once you finish changing the settings, you can click on **Update policy** button and then `Update Policy Chain`;
 9. Go to configuration and promote your changes to staging;
