@@ -114,7 +114,7 @@ parameters:
 
 - name: GIT_REPO
   description: GIT REPO
-  value: 'https://github.com/scrith/3scale-demo-policy'
+  value: 'https://github.com/3scale-demos/custom-policy-demo'
 
 - name: APICAST_CUSTOM_NAMESPACE
   description: 'where to find the custom policies'
